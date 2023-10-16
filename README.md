@@ -68,3 +68,17 @@ Do:
 $ ./bin/dev
 ```
 
+Separately start `sidekiq`:
+```zsh
+$ ./bin/sidekiq
+```
+
+## How to use
+
+External API calls are made every 5 minutes.
+
+After entering the stock symbol, e.g. "IBM" or "CAN", you should wait 5 min. until the data is populated from the API.
+
+Internal API calls are made every 3 seconds.
+
+The last column is the volume.

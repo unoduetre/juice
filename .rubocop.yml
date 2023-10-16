@@ -17,3 +17,25 @@ require:
 
 AllCops:
   NewCops: enable
+
+Metrics/MethodLength:
+  Exclude:
+    - db/migrate/*
+
+Layout/FirstArrayElementIndentation:
+  EnforcedStyle: consistent
+
+Layout/FirstHashElementIndentation:
+  EnforcedStyle: consistent
+
+RSpec/NamedSubject:
+  Enabled: false
+
+RSpec/ExpectInHook:
+  Enabled: false
+
+RSpec/MessageSpies:
+  Enabled: false
+
+RSpec/SubjectStub:
+  Enabled: false

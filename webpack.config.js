@@ -7,7 +7,7 @@ const __filename = url.fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 export default {
-  mode: "production",
+  mode: "development",
   devtool: "source-map",
   entry: {
     application: "./app/javascript/application.js",
@@ -18,6 +18,11 @@ export default {
         test: /\.pug$/,
         loader: 'pug-loader'
       },
+      {
+        test: /\.[mc]?js$/,
+        exclude: /\/node_modules\//,
+        loader: 'babel-loader'
+      }
     ],
   },
   output: {

@@ -47,6 +47,7 @@ module Juice
       g.helper_specs false
       g.view_specs false
       g.routing_specs false
+      g.template_engine :jbuilder
     end
   end
 end

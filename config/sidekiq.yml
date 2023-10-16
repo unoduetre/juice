@@ -1,0 +1,4 @@
+:scheduler:
+  :schedule:
+    StockPricesJob:
+      cron: '30 */5 * * * *'

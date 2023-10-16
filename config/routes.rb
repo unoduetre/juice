@@ -8,5 +8,9 @@ Rails.application.routes.draw do
   get 'up' => 'rails/health#show', as: :rails_health_check
 
   # Defines the root path route ("/")
-  # root "posts#index"
+  root 'dashboard#show'
+
+  resources :stock_symbols, only: %i[index create destroy] do
+    resources :stock_prices, only: %i[index]
+  end
 end

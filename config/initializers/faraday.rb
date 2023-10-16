@@ -1,5 +1,4 @@
 # frozen_string_literal: true
 
-require 'httpx/adapters/faraday'
-
-Faraday.default_adapter = :httpx
+require 'async/http/faraday'
+Faraday.default_adapter = :async_http

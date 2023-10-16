@@ -97,6 +97,15 @@ RSpec.configure do |config|
 end
 
 VCR.configure do |config|
-  config.cassette_library_dir = 'fixtures/vcr_cassettes'
+  config.cassette_library_dir = 'spec/vcr_cassettes'
   config.hook_into :webmock
+  config.filter_sensitive_data('REMOVED') do |interaction|
+    interaction.request.uri[/(?<=apikey=)[^&]+/]
+  end
+  config.default_cassette_options = {
+    match_requests_on: [
+      :method,
+      VCR.request_matchers.uri_without_param(:apikey)
+    ]
+  }
 end
